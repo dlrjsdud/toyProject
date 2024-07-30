@@ -9,10 +9,10 @@
 <link type="text/css" rel="stylesheet" href="/toyProject/css/bootStrap/bootStrap.css"/>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/jsp/toyProject/navbar.jsp" />
+	<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/navbar.jsp" />
 	<div class="container-fluid">
 		<div class="row">
-			<jsp:include page="/WEB-INF/jsp/toyProject/sidebar.jsp" />
+			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
@@ -146,7 +146,7 @@
 						</div>
 					</div>
 				</div>
-				<jsp:include page="/WEB-INF/jsp/toyProject/footer.jsp" />
+				<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/footer.jsp" />
 			</main>
 		</div>
 	</div>
