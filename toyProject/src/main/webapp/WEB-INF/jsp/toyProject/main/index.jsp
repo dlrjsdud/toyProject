@@ -1,5 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +21,12 @@
 						<li class="breadcrumb-item active" aria-current="page">Overview</li>
 					</ol>
 				</nav>
-				<h1 class="h2">Dashboard</h1>
+				<h1 class="h2">전체 게시글</h1>
 				<p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
 				<div class="row my-4">
 					<div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
 						<div class="card">
-							<h5 class="card-header">Customers</h5>
+							<h5 class="card-header">오늘 방문객 수 </h5>
 							<div class="card-body">
 								<h5 class="card-title">345k</h5>
 								<p class="card-text">Feb 1 - Apr 1, United States</p>
@@ -35,7 +36,7 @@
 					</div>
 					<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
 						<div class="card">
-							<h5 class="card-header">Revenue</h5>
+							<h5 class="card-header">총 게시글 수</h5>
 							<div class="card-body">
 								<h5 class="card-title">$2.4k</h5>
 								<p class="card-text">Feb 1 - Apr 1, United States</p>
@@ -65,77 +66,8 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-xl-8 mb-4 mb-lg-0">
-						<div class="card">
-							<h5 class="card-header">Latest transactions</h5>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr>
-												<th scope="col">Order</th>
-												<th scope="col">Product</th>
-												<th scope="col">Customer</th>
-												<th scope="col">Total</th>
-												<th scope="col">Date</th>
-												<th scope="col"></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<th scope="row">17371705</th>
-												<td>Volt Premium Bootstrap 5 Dashboard</td>
-												<td>johndoe@gmail.com</td>
-												<td>€61.11</td>
-												<td>Aug 31 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-											<tr>
-												<th scope="row">17370540</th>
-												<td>Pixel Pro Premium Bootstrap UI Kit</td>
-												<td>jacob.monroe@company.com</td>
-												<td>$153.11</td>
-												<td>Aug 28 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-											<tr>
-												<th scope="row">17371705</th>
-												<td>Volt Premium Bootstrap 5 Dashboard</td>
-												<td>johndoe@gmail.com</td>
-												<td>€61.11</td>
-												<td>Aug 31 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-											<tr>
-												<th scope="row">17370540</th>
-												<td>Pixel Pro Premium Bootstrap UI Kit</td>
-												<td>jacob.monroe@company.com</td>
-												<td>$153.11</td>
-												<td>Aug 28 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-											<tr>
-												<th scope="row">17371705</th>
-												<td>Volt Premium Bootstrap 5 Dashboard</td>
-												<td>johndoe@gmail.com</td>
-												<td>€61.11</td>
-												<td>Aug 31 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-											<tr>
-												<th scope="row">17370540</th>
-												<td>Pixel Pro Premium Bootstrap UI Kit</td>
-												<td>jacob.monroe@company.com</td>
-												<td>$153.11</td>
-												<td>Aug 28 2020</td>
-												<td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<a href="#" class="btn btn-block btn-light">View all</a>
-							</div>
-						</div>
+					<div>
+					<!-- 게시글 영역 -->
 					</div>
 					<div class="col-12 col-xl-4">
 						<div class="card">
