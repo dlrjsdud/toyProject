@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bootstrap 5 Login Page</title>
@@ -8,29 +9,28 @@
 <link type="text/css" rel="stylesheet" href="/toyProject/css/bootStrap/bootStrap.css"/>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/navbar.jsp" />
 	<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
 		<div class="row justify-content-center w-100">
 			<div class="col-md-6">
 				<div class="card">
 					<div class="card-header text-center">
-						<h3>Login</h3>
+						<h3>로그인</h3>
 					</div>
 					<div class="card-body">
 						<form>
 							<div class="form-group mb-3">
-								<label for="email">Email address</label>
+								<label for="email">이메일 주소</label>
 								<input type="email" class="form-control" id="email" placeholder="Enter email">
 							</div>
 							<div class="form-group mb-3">
-								<label for="password">Password</label>
+								<label for="password">비밀번호</label>
 								<input type="password" class="form-control" id="password" placeholder="Password">
 							</div>
-							<button type="submit" class="btn btn-primary w-100">Login</button>
+							<button type="submit" class="btn btn-primary w-100">로그인</button>
 						</form>
 					</div>
 					<div class="card-footer text-center">
-						<a href="#">Forgot Password?</a>
+						<a href="#">비밀번호 찾기</a>
 					</div>
 				</div>
 			</div>
