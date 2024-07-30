@@ -27,6 +27,7 @@
 				<button class="btn btn-secondary dropdown-toggle" type="button"
 					id="dropdownMenuButton" data-toggle="dropdown"
 					aria-expanded="false">Login</button>
+					<!-- 로그인 했을때는 사용자 이름, 로그인 안했을때는 Login 버튼 보여야함! -->
 				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<li><a class="dropdown-item" href="#">Settings</a></li>
 					<li><a class="dropdown-item" href="#">Messages</a></li>

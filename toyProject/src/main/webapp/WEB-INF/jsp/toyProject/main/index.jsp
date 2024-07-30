@@ -1,14 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bootstrap 5 Simple Admin Dashboard</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-<link type="text/css" rel="stylesheet" href="/toyProject/css/bootStrap/bootStrap.css"/>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+	integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<link type="text/css" rel="stylesheet"
+	href="/toyProject/css/bootStrap/bootStrap.css" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/navbar.jsp" />
@@ -16,67 +21,28 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Overview</li>
-					</ol>
-				</nav>
-				<h1 class="h2">전체 게시글</h1>
-				<p>This is the homepage of a simple admin interface which is part of a tutorial written on Themesberg</p>
+				<!-- 버튼 클릭할때마다 기간에 맞는 인기글 리스트 가져오기(비동기) -->
+				<a class="btn btn-sm btn-secondary ml-3 mt-2" href=""> 일간 인기글 </a>
+				<a class="btn btn-sm btn-warning ml-3 mt-2" href=""> 주간 인기글 </a>
+				<a class="btn btn-sm btn-primary ml-3 mt-2" href=""> 월간 인기글 </a>
 				<div class="row my-4">
-					<div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+					<div class="col-12 mb-4">
 						<div class="card">
-							<h5 class="card-header">오늘 방문객 수 </h5>
+							<h5 class="card-header">일간 인기글</h5>
 							<div class="card-body">
-								<h5 class="card-title">345k</h5>
-								<p class="card-text">Feb 1 - Apr 1, United States</p>
-								<p class="card-text text-success">18.2% increase since last month</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-						<div class="card">
-							<h5 class="card-header">총 게시글 수</h5>
-							<div class="card-body">
-								<h5 class="card-title">$2.4k</h5>
-								<p class="card-text">Feb 1 - Apr 1, United States</p>
-								<p class="card-text text-success">4.6% increase since last month</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-						<div class="card">
-							<h5 class="card-header">Purchases</h5>
-							<div class="card-body">
-								<h5 class="card-title">43</h5>
-								<p class="card-text">Feb 1 - Apr 1, United States</p>
-								<p class="card-text text-danger">2.6% decrease since last month</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
-						<div class="card">
-							<h5 class="card-header">Traffic</h5>
-							<div class="card-body">
-								<h5 class="card-title">64k</h5>
-								<p class="card-text">Feb 1 - Apr 1, United States</p>
-								<p class="card-text text-success">2.5% increase since last month</p>
+								<p class="card-text">1위 - 자유게시판 "똥민지"</p>
+								<p class="card-text">2위 - a게시판 "시른데~?"</p>
+								<p class="card-text">. . .</p>
+								<p class="card-text">10위 - b게시판 "얌푸"</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div>
-					<!-- 게시글 영역 -->
-					</div>
-					<div class="col-12 col-xl-4">
-						<div class="card">
-							<h5 class="card-header">Traffic last 6 months</h5>
-							<div class="card-body">
-								<div id="traffic-chart"></div>
-							</div>
-						</div>
+					<div class="col-12">
+						<h1>게시글 영역</h1>
+						<!-- 게시글 영역 -->
+						<!-- ToastGrid 라이브러리 사용 예정! -->
 					</div>
 				</div>
 				<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/footer.jsp" />
@@ -95,16 +61,5 @@
 		src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
-	<script>
-		new Chartist.Line('#traffic-chart',
-				{
-					labels : [ 'January', 'Februrary', 'March', 'April', 'May',
-							'June' ],
-					series : [ [ 23000, 25000, 19000, 34000, 56000, 64000 ] ]
-				}, {
-					low : 0,
-					showArea : true
-				});
-	</script>
 </body>
 </html>

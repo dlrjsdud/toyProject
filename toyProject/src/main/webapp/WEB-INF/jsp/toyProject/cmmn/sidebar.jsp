@@ -21,7 +21,7 @@
 									<path
 										d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
 									<polyline points="13 2 13 9 20 9"></polyline></svg>
-									<span class="ml-2">전체글</span>
+									<span class="ml-2">자유게시판</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="#"> <svg
 									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -32,7 +32,7 @@
 									<circle cx="20" cy="21" r="1"></circle>
 									<path
 										d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-								<span class="ml-2">인기글</span>
+								<span class="ml-2">a게시판</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="#"> <svg
 									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -42,7 +42,7 @@
 									<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
 									<circle cx="9" cy="7" r="4"></circle>
 									<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <span class="ml-2">주제</span>
+									<path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <span class="ml-2">b게시판</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="#"> <svg
 									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -51,7 +51,7 @@
 									class="feather feather-bar-chart-2">
 									<line x1="18" y1="20" x2="18" y2="10"></line>
 									<line x1="12" y1="20" x2="12" y2="4"></line>
-									<line x1="6" y1="20" x2="6" y2="14"></line></svg> <span class="ml-2">Reports</span>
+									<line x1="6" y1="20" x2="6" y2="14"></line></svg> <span class="ml-2">c게시판</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="#"> <svg
 									xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -63,6 +63,9 @@
 									<polyline points="2 12 12 17 22 12"></polyline></svg> <span
 								class="ml-2">공지사항</span>
 						</a></li>
+						
+						
+						<!-- 지워야할듯?.? -->
 						<li class="nav-item"><a
 							class="btn btn-sm btn-secondary ml-3 mt-2"
 							href="https://themesberg.com/blog/bootstrap/simple-bootstrap-5-dashboard-tutorial">
@@ -80,6 +83,10 @@
 						<li class="nav-item"><a
 							class="btn btn-sm btn-primary ml-3 mt-2"
 							href="https://themesberg.com"> By Themesberg ❤️ </a></li>
+						<!-- 지워야할듯?.? -->
+							
+							
+							
 					</ul>
 				</div>
 			</nav>
