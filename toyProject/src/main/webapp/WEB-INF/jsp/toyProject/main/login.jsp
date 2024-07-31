@@ -9,31 +9,25 @@
 <link type="text/css" rel="stylesheet" href="/toyProject/css/bootStrap/bootStrap.css"/>
 </head>
 <body>
-	<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
-		<div class="row justify-content-center w-100">
-			<div class="col-md-6">
-				<div class="card">
-					<div class="card-header text-center">
-						<h3>로그인</h3>
-					</div>
-					<div class="card-body">
-						<form>
-							<div class="form-group mb-3">
-								<label for="email">이메일 주소</label>
-								<input type="email" class="form-control" id="email" placeholder="Enter email">
+	<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/navbar.jsp" />
+	<div class="container-fluid">
+		<div class="row">
+			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
+			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+			
+				
+				<div class="row my-4">
+					<div class="col-12 mb-4">
+						<div class="card" >
+							<h5 class="card-header">로그인</h5>
+							<div class="card-body">
+								<a href="/toyProject/login/naver-login.do"><button>네이버 로그인</button></a>
 							</div>
-							<div class="form-group mb-3">
-								<label for="password">비밀번호</label>
-								<input type="password" class="form-control" id="password" placeholder="Password">
-							</div>
-							<button type="submit" class="btn btn-primary w-100">로그인</button>
-						</form>
-					</div>
-					<div class="card-footer text-center">
-						<a href="#">비밀번호 찾기</a>
+						</div>
 					</div>
 				</div>
-			</div>
+				<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/footer.jsp" />
+			</main>
 		</div>
 	</div>
 	<script

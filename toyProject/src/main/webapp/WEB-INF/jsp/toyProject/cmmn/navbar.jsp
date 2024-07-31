@@ -24,6 +24,11 @@
 					aria-label="Star /themesberg/simple-bootstrap-5-dashboard">Star</a>
 			</div>
 			<div class="dropdown">
+				<a href="/toyProject/login.do">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  aria-expanded="false">
+					Login
+					</button> 
+				</a>
 				<button class="btn btn-secondary dropdown-toggle" type="button"
 					id="dropdownMenuButton" data-toggle="dropdown"
 					aria-expanded="false">Login</button>
