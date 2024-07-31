@@ -27,6 +27,7 @@
 				<div class="d-flex align-items-center">
 					<input type="text" name="searchInput" class="search" onkeydown="handleKeyDown(event)">
 					<button class="btn btn-sm btn-primary ml-3" onclick="search();">검색</button>
+					<a class="btn btn-sm btn-warning ml-auto" href="${pageContext.request.contextPath}/write.do">글쓰기</a>
 				</div>
 				<h1></h1>
 				<div id="freeGrid"></div>
@@ -48,92 +49,6 @@
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
 
-	<script type="text/javascript">
-	
-		const gridData = [ {
-			index : '1',
-			title : '첫 번째 글',
-			id : '이건영',
-			date : "24-08-01",
-			views : "12"
-		}, {
-			index : '2',
-			title : '두 번째 글',
-			id : '이건영',
-			date : "24-07-31",
-			views : "43"
-		}, {
-			index : '3',
-			title : '유 민지 똥',
-			id : '이건영',
-			date : "24-07-30",
-			views : "12"
-		}, {
-			index : '4',
-			title : '유 민지 응가',
-			id : '이건영',
-			date : "24-07-29",
-			views : "23"
-		}, {
-			index : '5',
-			title : '유 민지 바보',
-			id : '이건영',
-			date : "24-07-29",
-			views : "44"
-		} ];
-		
-		tui.Grid.applyTheme('striped', {
-			  cell: {
-			    header: {
-			      background: '#eef'
-			    },
-			    evenRow: {
-			      background: '#fee'
-			    }
-			  }
-			});
-
-		const grid = new tui.Grid({
-			el : document.getElementById('freeGrid'),
-			data : gridData,
-			scrollX : false,
-			scrollY : false,
-			columns : [ {
-				header : '번호',
-				name : 'index'
-			}, {
-				header : '제목',
-				name : 'title',
-				width : 800
-			}, {
-				header : '작성자',
-				name : 'id'
-			}, {
-				header : '작성일',
-				name : 'date'
-			}, {
-				header : '조회',
-				name : 'views'
-			} ]
-		});
-		
-		function search(){
-			const searchInput = document.querySelector('.search').value.toLowerCase();
-			const filteredData = gridData.filter(item => {
-				return item.title.toLowerCase().includes(searchInput) ||
-					   item.id.toLowerCase().includes(searchInput) ||
-					   item.date.toLowerCase().includes(searchInput);
-			});
-			grid.resetData(filteredData);
-		}
-		
-		function handleKeyDown(event) {
-			if (event.key === 'Enter') {
-				search();
-			}
-		}
-
-		
-	</script>
+	<script src="/toyProject/js/free.js"></script>
 </body>
 </html>
