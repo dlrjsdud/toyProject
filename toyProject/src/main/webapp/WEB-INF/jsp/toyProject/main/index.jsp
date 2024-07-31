@@ -22,9 +22,9 @@
 			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 				<!-- 버튼 클릭할때마다 기간에 맞는 인기글 리스트 가져오기(비동기) -->
-				<a class="btn btn-sm btn-secondary ml-3 mt-2" href=""> 일간 인기글 </a>
-				<a class="btn btn-sm btn-warning ml-3 mt-2" href=""> 주간 인기글 </a>
-				<a class="btn btn-sm btn-primary ml-3 mt-2" href=""> 월간 인기글 </a>
+				<a class="btn btn-sm btn-secondary ml-3 mt-2" href=""> 일간 인기글 </a> <a
+					class="btn btn-sm btn-warning ml-3 mt-2" href=""> 주간 인기글 </a> <a
+					class="btn btn-sm btn-primary ml-3 mt-2" href=""> 월간 인기글 </a>
 				<div class="row my-4">
 					<div class="col-12 mb-4">
 						<div class="card">
@@ -36,13 +36,6 @@
 								<p class="card-text">10위 - b게시판 "얌푸"</p>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12">
-						<h1>게시글 영역</h1>
-						<!-- 게시글 영역 -->
-						<!-- ToastGrid 라이브러리 사용 예정! -->
 					</div>
 				</div>
 				<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/footer.jsp" />
