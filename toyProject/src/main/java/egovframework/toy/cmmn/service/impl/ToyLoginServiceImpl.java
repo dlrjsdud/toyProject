@@ -13,11 +13,11 @@ import egovframework.toy.cmmn.service.ToyLoginService;
 public class ToyLoginServiceImpl implements ToyLoginService {
 
 	public String getNaverAuthorizeUrl(String type){	
+		String baseUrl;  
+        String clientId; 
+        String redirectUrl; 
+
 		/*
-		 * String baseUrl = envConfig.getConfigValue("login.naver.baseUrl"); String
-		 * clientId = envConfig.getConfigValue("login.naver.clientId"); String
-		 * redirectUrl = envConfig.getConfigValue("login.naver.redirectUrl");
-		 * 
 		 * UriComponents uriComponents = UriComponentsBuilder .fromUriString(baseUrl +
 		 * "/" + type) .queryParam("response_type", "code") .queryParam("client_id",
 		 * clientId) .queryParam("redirect_uri", URLEncoder.encode(redirectUrl,
@@ -25,6 +25,7 @@ public class ToyLoginServiceImpl implements ToyLoginService {
 		 * 
 		 * return uriComponents.toString();
 		 */
+        
 		return null;
 	}
 	
