@@ -1,6 +1,7 @@
 package egovframework.toy.free.service.impl;
 
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import egovframework.toy.free.service.FreeService;
@@ -9,10 +10,19 @@ import egovframework.toy.free.service.FreeVO;
 @Service
 public class FreeServiceImpl extends EgovAbstractServiceImpl implements FreeService {
 
+	@Autowired
+	FreeMapper mapper;
+	
 	@Override
-	public FreeVO selectUser(FreeVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public FreeVO selectUser(String id) throws Exception {
+		System.out.println("들어옴");
+		FreeVO freeVo = mapper.selectUser(id);
+		if(freeVo == null) {
+			System.out.println("서비스임플 비었음");
+		}else {
+			System.out.println("서비스임플 안비었음");
+		}
+		return freeVo;
 	}
 	
 }
