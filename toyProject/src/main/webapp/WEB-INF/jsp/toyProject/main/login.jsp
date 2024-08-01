@@ -1,7 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bootstrap 5 Login Page</title>
@@ -21,9 +22,10 @@
 						<div class="card" >
 							<h5 class="card-header">로그인</h5>
 							<div class="card-body">
-								<a href="/toyProject/login/naver-login.do"><img src="/images/toyProject/btnG.png" style="width: 100px; height: 35px" ></a>
+								<a href="/toyProject/login/naver-login.do"><img src="/toyProject/images/toyProject/btnG.png" style="width: 100px; height: 35px" ></a>
+								<br>
 								<a href="https://nid.naver.com/oauth2.0/authorize" th:href="@{https://nid.naver.com/oauth2.0/authorize(client_id=${naverClientId}, redirect_uri=${naverRedirectUri}, response_type='code', state=${state})}">
-							       <img src="/images/toyProject/btnG.png" style="width: 100px; height: 35px" >
+							       <img src="/toyProject/images/toyProject/btnG.png" style="width: 100px; height: 35px" alt="네이버 로그인 버튼">
 							    </a>
 							</div>
 						</div>
