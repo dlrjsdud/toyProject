@@ -4,7 +4,7 @@ import org.egovframe.rte.psl.dataaccess.mapper.Mapper;
 
 import egovframework.toy.free.service.FreeVO;
 
-@Mapper("freeMapper")
+@Mapper
 public interface FreeMapper {
 	
 	FreeVO selectUser(String id) throws Exception;

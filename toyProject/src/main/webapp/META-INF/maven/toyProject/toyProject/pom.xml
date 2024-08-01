@@ -96,7 +96,6 @@
 			<classifier>jdk8</classifier>
 		</dependency>
 		<!-- mysql이나 oracle 필요시 사용 -->
-		<!-- 
         <dependency>
             <groupId>com.googlecode.log4jdbc</groupId>
             <artifactId>log4jdbc</artifactId>
@@ -108,7 +107,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        -->
 
         <dependency>
 		    <groupId>org.apache.commons</groupId>

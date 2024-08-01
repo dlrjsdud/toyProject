@@ -15,13 +15,7 @@ public class FreeServiceImpl extends EgovAbstractServiceImpl implements FreeServ
 	
 	@Override
 	public FreeVO selectUser(String id) throws Exception {
-		System.out.println("들어옴");
 		FreeVO freeVo = mapper.selectUser(id);
-		if(freeVo == null) {
-			System.out.println("서비스임플 비었음");
-		}else {
-			System.out.println("서비스임플 안비었음");
-		}
 		return freeVo;
 	}
 	

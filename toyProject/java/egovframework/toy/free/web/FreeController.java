@@ -18,11 +18,6 @@ public class FreeController {
 		System.out.println("free.do 요청");
 		
 		FreeVO vo = service.selectUser("qwe");
-		if(vo==null) {
-			System.out.println("비었음");
-		}else {
-			System.out.println("안비었음");
-		}
 		System.out.println(vo.getId());
 		System.out.println(vo.getPassword());
 		

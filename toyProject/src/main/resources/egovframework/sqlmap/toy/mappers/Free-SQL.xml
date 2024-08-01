@@ -7,12 +7,8 @@
 		<result property="password" column="password"/>
 	</resultMap>
 
-	<select id="selectUser" resultMap="free">
-
-			SELECT *
-			FROM user
-			WHERE id=#{id}
-
-	</select>
+	 <select id="selectUser" parameterType="String" resultType="freeVO">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
 
 </mapper>
