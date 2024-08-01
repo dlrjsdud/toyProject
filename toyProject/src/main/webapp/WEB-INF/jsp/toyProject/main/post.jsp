@@ -43,7 +43,7 @@
 						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.</p>
 					</div>
 					<div class="card-footer text-end">
-						<a href="#" class="btn btn-primary">목록으로</a>
+						<a class="btn btn-primary" onclick="window.history.back(); return false;">목록으로</a>
 					</div>
 				</div>
 
