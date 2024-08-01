@@ -27,6 +27,7 @@ public class LoginController {
 	
 	@GetMapping("/login/naver-login.do")
 	public void naverLoging(HttpServletRequest request,HttpServletResponse response) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException {
+		System.out.println("controller 들어옴");
 		String url = toyLoginService.getNaverAuthorizeUrl("authorize");
 		System.out.println(url);
 	}
