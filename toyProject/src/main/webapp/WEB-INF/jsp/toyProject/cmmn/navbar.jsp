@@ -13,6 +13,11 @@
 		<div
 			class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
 			<div class="dropdown">
+				<a href="/toyProject/login.do">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  aria-expanded="false">
+					Login
+					</button> 
+				</a>
 				<button class="btn btn-secondary dropdown-toggle" type="button"
 					id="dropdownMenuButton" data-toggle="dropdown"
 					aria-expanded="false">Login</button>
