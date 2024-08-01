@@ -14,7 +14,7 @@ public class FreeController {
 	FreeService service;
 
 	@GetMapping("/free.do")
-	public String indexDo() throws Exception {
+	public String freeDo() throws Exception {
 		System.out.println("free.do 요청");
 		
 		FreeVO vo = service.selectUser("qwe");
