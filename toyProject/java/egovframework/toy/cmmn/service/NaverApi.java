@@ -2,7 +2,9 @@ package egovframework.toy.cmmn.service;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import lombok.Data;
 
+@Data
 public class NaverApi {
 
 	@Value("Lytfg0QCqUNQaYbNPusV")
