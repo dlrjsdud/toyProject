@@ -7,6 +7,6 @@ import egovframework.toy.free.service.FreeVO;
 @Mapper
 public interface FreeMapper {
 	
-	FreeVO selectUser(String id) throws Exception;
+	FreeVO getFree() throws Exception;
 	
 }

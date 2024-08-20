@@ -14,8 +14,8 @@ public class FreeServiceImpl extends EgovAbstractServiceImpl implements FreeServ
 	FreeMapper mapper;
 	
 	@Override
-	public FreeVO selectUser(String id) throws Exception {
-		FreeVO freeVo = mapper.selectUser(id);
+	public FreeVO getFree() throws Exception {
+		FreeVO freeVo = mapper.getFree();
 		return freeVo;
 	}
 	
