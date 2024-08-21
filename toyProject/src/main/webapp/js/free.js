@@ -70,7 +70,7 @@ grid.on('click', (ev) => {
 	const rowKey = ev.rowKey;
 	const rowData = grid.getRow(rowKey);
 	const post_id = encodeURIComponent(rowData.post_id);
-	const url = `post.do?page=`;
+	const url = `post.do?post_id=`;
 	window.location.href = url + post_id;
 });
 

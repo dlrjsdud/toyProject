@@ -11,7 +11,7 @@
 	</resultMap>
 
 	 <select id="getFree" parameterType="String" resultType="freeVO">
-        SELECT * FROM free
+        SELECT post_id, title, email, created_at, view_count FROM free
     </select>
 
 </mapper>
