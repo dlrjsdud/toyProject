@@ -9,15 +9,8 @@ tui.Grid.applyTheme('striped', {
 	}
 });
 
-const dataSource = {
-	api: {
-		readData: { url: '/toyProject/getFree.do', method: 'GET', contentType: 'application/json' }
-	}
-};
-
 const grid = new tui.Grid({
 	el: document.getElementById('freeGrid'),
-	data: dataSource,
 	scrollX: false,
 	scrollY: false,
 	columns: [{
@@ -39,24 +32,45 @@ const grid = new tui.Grid({
 	}]
 });
 
-fetch('/toyProject/getFree.do')
-    .then(response => {
-        console.log('Response status:', response.status);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+$.ajax({
+    url: '/toyProject/getFree.do',
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+        if (response.result) {
+            // 서버 응답에서 data 배열 가져오기
+            const data = response.data;
+
+            // 새로운 contents 배열 생성
+            const contents = [];
+
+            // data가 배열이므로 반복문 사용
+            data.forEach(item => {
+                contents.push({
+                    post_id: item.post_id,
+                    title: item.title,
+                    email: item.email,
+                    created_at: item.created_at,
+                    view_count: item.view_count
+                });
+            });
+
+            // 그리드에 데이터 설정
+            grid.resetData(contents);
+        } else {
+            console.error('데이터를 가져오는 데 실패했습니다.');
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Response data:', data);
-    })
-    .catch(error => console.error('Error:', error));
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.error('Error:', textStatus, errorThrown);
+    }
+});
 
 grid.on('click', (ev) => {
 	const rowKey = ev.rowKey;
 	const rowData = grid.getRow(rowKey);
 	const post_id = encodeURIComponent(rowData.post_id);
-	const url = `${pageContext.request.contextPath}/post.do?a=`;
+	const url = `post.do?page=`;
 	window.location.href = url + post_id;
 });
 

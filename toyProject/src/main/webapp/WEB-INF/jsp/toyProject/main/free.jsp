@@ -16,6 +16,7 @@
 	href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link type="text/css" rel="stylesheet"
 	href="/toyProject/css/bootStrap/bootStrap.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <body>
@@ -25,9 +26,11 @@
 			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 				<div class="d-flex align-items-center">
-					<input type="text" name="searchInput" class="search" onkeydown="handleKeyDown(event)">
+					<input type="text" name="searchInput" class="search"
+						onkeydown="handleKeyDown(event)">
 					<button class="btn btn-sm btn-primary ml-3" onclick="search();">검색</button>
-					<a class="btn btn-sm btn-warning ml-auto" href="${pageContext.request.contextPath}/write.do">글쓰기</a>
+					<a class="btn btn-sm btn-warning ml-auto"
+						href="${pageContext.request.contextPath}/write.do">글쓰기</a>
 				</div>
 				<h1></h1>
 				<div id="freeGrid"></div>
