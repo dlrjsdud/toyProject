@@ -44,12 +44,13 @@ public class ToyLoginServiceImpl implements ToyLoginService {
 		String baseUrl = "https://nid.naver.com/oauth2.0";
 		String clientId = "Lytfg0QCqUNQaYbNPusV";
 		String redirectUrl = "http://localhost:8081/toyProject/login/naver/code.do";
-		String clientSecret ="YpKL3v4wFp";
+		//String clientSecret ="YpKL3v4wFp";
 		//String clientId = naverApi.getNaverClientId();
         //String redirectUrl = naverApi.getNaverRedirectUri();
 		//String clientSecret = naverApi.getNaverClientSecret();
 		
 		String state = generateState();
+		System.out.println("state생성 : "+state );
 		HttpSession session = request.getSession();
 		//request.session().attribute("state", state);
 		session.setAttribute("state",state);
@@ -59,7 +60,7 @@ public class ToyLoginServiceImpl implements ToyLoginService {
                 .queryParam("response_type", "code")
                 .queryParam("client_id", clientId)
                 .queryParam("redirect_uri", URLEncoder.encode(redirectUrl, "UTF-8"))
-                .queryParam("state", state)
+                .queryParam("state", "state")
                 .build();
 
         System.out.println(uriComponents.toString());
@@ -78,19 +79,16 @@ public class ToyLoginServiceImpl implements ToyLoginService {
 		String clientSecret ="YpKL3v4wFp";
         String redirectURI = URLEncoder.encode(redirectUrl, "UTF-8");
         
-        HttpSession session = request.getSession();
-        System.out.println("1");
-        
+        HttpSession session = request.getSession();       
 		String state = (String)session.getAttribute("state");
-		System.out.println("콜백함수 state"+state);
-        
+		System.out.println("콜백함수 state : "+state);        
 		
         UriComponents uriComponents = UriComponentsBuilder
                 .fromUriString(baseUrl + "/" + type)
                 .queryParam("grant_type", "authorization_code")
                 .queryParam("client_id", clientId)
                 .queryParam("client_secret", clientSecret)
-                //.queryParam("redirect_uri", redirectURI)
+                .queryParam("redirect_uri", redirectURI)
                 .queryParam("code",code)
                 .queryParam("state",state)
                 .build();
