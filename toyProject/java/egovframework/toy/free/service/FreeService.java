@@ -1,7 +1,9 @@
 package egovframework.toy.free.service;
 
+import java.util.List;
+
 public interface FreeService {
 	
-	FreeVO selectUser(String id) throws Exception;
+	List<FreeVO> getFree() throws Exception;
 
 }

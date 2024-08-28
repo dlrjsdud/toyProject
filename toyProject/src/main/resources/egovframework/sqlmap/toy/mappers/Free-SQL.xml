@@ -3,12 +3,15 @@
 <mapper namespace="egovframework.toy.free.service.impl.FreeMapper">
 
 	<resultMap id="free" type="egovframework.toy.free.service.FreeVO">
-		<result property="id" column="id"/>
-		<result property="password" column="password"/>
+		<result property="post_id" column="post_id"/>
+		<result property="title" column="title"/>
+		<result property="email" column="email"/>
+		<result property="created_at" column="created_at"/>
+		<result property="view_count" column="view_count"/>
 	</resultMap>
 
-	 <select id="selectUser" parameterType="String" resultType="freeVO">
-        SELECT * FROM user WHERE id = #{id}
+	 <select id="getFree" parameterType="String" resultType="freeVO">
+        SELECT post_id, title, email, created_at, view_count FROM free
     </select>
 
 </mapper>

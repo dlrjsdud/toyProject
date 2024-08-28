@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>게시판 글 상세보기</title>
@@ -17,30 +18,12 @@
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 				<div class="card mb-4">
 					<div class="card-header">
-						<h5>글 제목</h5>
+						<h5>${post.title}</h5>
 					</div>
 					<div class="card-body">
-						<h6 class="card-subtitle mb-2 text-muted">작성자: John Doe</h6>
-						<h6 class="card-subtitle mb-2 text-muted">작성일: 2023-07-30</h6>
-						<p class="card-text">여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.
-						여기에 글 내용을 입력합니다. 이 글은 예시 글입니다. 이 글은 게시판의 글 상세보기 페이지를 보여주기 위해 작성되었습니다.</p>
+						<h6 class="card-subtitle mb-2 text-muted">작성자: ${post.email}</h6>
+						<h6 class="card-subtitle mb-2 text-muted">작성일: ${post.created_at}</h6>
+						<p class="card-text" id="postContent">${post.content}</p>
 					</div>
 					<div class="card-footer text-end">
 						<a class="btn btn-primary" onclick="window.history.back(); return false;">목록으로</a>
@@ -97,5 +80,7 @@
 		src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	
+	<script src="/toyProject/js/post.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package egovframework.toy.free.service;
+package egovframework.toy.post.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,12 +11,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class FreeVO {
-	
+public class PostVO {
+
 	private int post_id;
 	private String title;
 	private String email;
 	private String created_at;
 	private int view_count;
-	
+	private String content;
 }

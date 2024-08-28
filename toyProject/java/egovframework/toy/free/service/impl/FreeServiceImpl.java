@@ -1,5 +1,7 @@
 package egovframework.toy.free.service.impl;
 
+import java.util.List;
+
 import org.egovframe.rte.fdl.cmmn.EgovAbstractServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,8 @@ public class FreeServiceImpl extends EgovAbstractServiceImpl implements FreeServ
 	FreeMapper mapper;
 	
 	@Override
-	public FreeVO selectUser(String id) throws Exception {
-		FreeVO freeVo = mapper.selectUser(id);
+	public List<FreeVO> getFree() throws Exception {
+		List<FreeVO> freeVo = mapper.getFree();
 		return freeVo;
 	}
 	
