@@ -40,14 +40,15 @@ public class LoginController {
             response.sendRedirect(url);
         } catch (Exception e) {
             e.printStackTrace();
-        }		
+        }
 	}
 	
 	@GetMapping("/login/naver/code.do")
-	public void callBack(HttpServletRequest request, HttpServletResponse response,@RequestParam("code")String code) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException{
+	public String callBack(HttpServletRequest request, HttpServletResponse response,@RequestParam("code")String code) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException{
 		System.out.println("콜백 컨드롤러 들어옴");
 		String responseToken = toyLoginService.getNaverTokenUrl("token", request,code);
 		System.out.println(responseToken);
+		return "main/index";
 	}
 	
 	
