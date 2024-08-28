@@ -15,4 +15,6 @@ public class NaverApi {
 	
 	@Value("YpKL3v4wFp")
 	private String naverClientSecret;
+	
+	private String code;
 }
