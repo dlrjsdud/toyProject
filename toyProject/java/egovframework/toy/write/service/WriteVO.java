@@ -1,4 +1,4 @@
-package egovframework.toy.post.service;
+package egovframework.toy.write.service;
 
 import egovframework.toy.cmmn.service.CommunityVO;
 import lombok.AllArgsConstructor;
@@ -7,6 +7,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-public class PostVO extends CommunityVO {
+public class WriteVO extends CommunityVO {
 
 }

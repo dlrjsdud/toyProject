@@ -16,6 +16,7 @@
 	href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link type="text/css" rel="stylesheet"
 	href="/toyProject/css/bootStrap/bootStrap.css" />
+<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
@@ -50,6 +51,7 @@
 		src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	<!-- Github buttons -->
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script type="text/javascript" src="https://uicdn.toast.com/tui.pagination/v3.4.0/tui-pagination.js"></script>
 	<script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
 
 	<script src="/toyProject/js/free.js"></script>

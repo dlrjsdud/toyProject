@@ -22,6 +22,8 @@
 						<div class="card" >
 							<h5 class="card-header">로그인</h5>
 							<div class="card-body">
+							
+							    <!-- 이거 왜 두개야 유우민지! -->
 								<a href="/toyProject/login/naver-login.do"><img src="/toyProject/images/toyProject/btnG.png" style="width: 100px; height: 35px" ></a>
 							
 							</div>

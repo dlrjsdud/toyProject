@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="egovframework.toy.index.service.impl.IndexMapper">
+
+	<select id="getRank" resultType="indexVO">
+		SELECT *
+		FROM free
+		WHERE created_at >= CONCAT(CURRENT_DATE, ' 00:00:00')
+		AND created_at &lt; CONCAT(CURRENT_DATE + INTERVAL 1 DAY, ' 00:00:00')
+		ORDER BY view_count DESC
+		LIMIT 10;
+	</select>
+
+</mapper>

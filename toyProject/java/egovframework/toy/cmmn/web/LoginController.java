@@ -44,7 +44,7 @@ public class LoginController {
             response.sendRedirect(url);
         } catch (Exception e) {
             e.printStackTrace();
-        }		
+        }
 	}
 	
 	 @GetMapping("/login/naver/code.do")

@@ -19,7 +19,10 @@ public class PostController {
 	public String postDo(@RequestParam String post_id, Model model) throws Exception {
 		System.out.println("post.do 요청");
 		
-		//DB에서 글 내용을 가져온뒤, model에 저장하는 코드
+		//조회수 1 증가
+		service.incrementViewCount(post_id);
+		
+		//글 내용 가져오기
 		PostVO vo = service.getPost(post_id);
 		
 		model.addAttribute("post",vo);

@@ -100,7 +100,7 @@ public class ToyLoginServiceImpl implements ToyLoginService {
                 .queryParam("state",state)
                 .build();
       
-     // URI 생성
+        // URI 생성
         String uri = uriComponents.toUriString();
         System.out.println("아무거나");
 
