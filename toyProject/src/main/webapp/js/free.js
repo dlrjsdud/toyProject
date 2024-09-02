@@ -13,6 +13,10 @@ const grid = new tui.Grid({
 	el: document.getElementById('freeGrid'),
 	scrollX: false,
 	scrollY: false,
+	pageOptions: {
+   		useClient: true,
+    	perPage: 10
+  	},
 	columns: [{
 		header: '번호',
 		name: 'post_id'
@@ -65,6 +69,8 @@ $.ajax({
         console.error('Error:', textStatus, errorThrown);
     }
 });
+
+
 
 grid.on('click', (ev) => {
 	const rowKey = ev.rowKey;

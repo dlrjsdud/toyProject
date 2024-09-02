@@ -60,7 +60,6 @@ public class ToyLoginServiceImpl implements ToyLoginService {
                 .queryParam("response_type", "code")
                 .queryParam("client_id", clientId)
                 .queryParam("redirect_uri", URLEncoder.encode(redirectUrl, "UTF-8"))
-                .queryParam("state", "state")
                 .build();
 
         System.out.println(uriComponents.toString());
@@ -93,7 +92,7 @@ public class ToyLoginServiceImpl implements ToyLoginService {
                 .queryParam("state",state)
                 .build();
       
-     // URI 생성
+        // URI 생성
         String uri = uriComponents.toUriString();
         System.out.println("아무거나");
 

@@ -9,4 +9,6 @@ public interface PostMapper {
 	
 	PostVO getPost(String post_id) throws Exception;
 	
+	int incrementViewCount(String post_id) throws Exception;
+	
 }

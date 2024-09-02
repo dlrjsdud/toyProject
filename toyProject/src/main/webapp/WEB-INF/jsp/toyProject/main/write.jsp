@@ -20,7 +20,7 @@
 						<h5>글 쓰기</h5>
 					</div>
 					<div class="card-body">
-						<form method="post" action="/toyProject/board/write">
+						<form method="post" action="/toyProject/register.do">
 							<div class="form-group mb-3">
 								<label for="title">글 제목:</label>
 								<input type="text" class="form-control" id="title" name="title" required>

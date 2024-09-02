@@ -19,4 +19,10 @@ public class PostServiceImpl extends EgovAbstractServiceImpl implements PostServ
 		return postVo;
 	}
 	
+	@Override
+	public int incrementViewCount(String post_id) throws Exception{
+		int result = mapper.incrementViewCount(post_id);
+		return result;
+	}
+	
 }
