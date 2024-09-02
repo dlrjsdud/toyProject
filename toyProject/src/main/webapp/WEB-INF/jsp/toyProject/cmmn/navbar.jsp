@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<nav class="navbar navbar-light bg-light p-3">
 		<div
 			class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
@@ -13,20 +14,27 @@
 		<div
 			class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
 			<div class="dropdown">
-				<a href="/toyProject/login.do">
-					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"  aria-expanded="false">
-					Login
-					</button> 
-				</a>
-				<button class="btn btn-secondary dropdown-toggle" type="button"
-					id="dropdownMenuButton" data-toggle="dropdown"
-					aria-expanded="false">Login</button>
-					<!-- 로그인 했을때는 사용자 이름, 로그인 안했을때는 Login 버튼 보여야함! -->
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<li><a class="dropdown-item" href="#">Settings</a></li>
-					<li><a class="dropdown-item" href="#">Messages</a></li>
-					<li><a class="dropdown-item" href="#">Log out</a></li>
-				</ul>
+				<%-- <c:out value="${email}" /> --%>
+				<c:choose>
+				    <c:when test="${empty email}">
+				        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" aria-expanded="false" onclick="window.location.href='/toyProject/login.do';">NaverLogin</button>
+				    </c:when>
+				    <c:otherwise>
+				        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+				        	${email}
+				        	<!-- map방법 다시 찾기 -->
+				        </button>
+				    </c:otherwise>
+				</c:choose>
+				
+				
+				<c:if test="${not empty email}">
+				    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				        <li><a class="dropdown-item" href="#">Settings</a></li>
+				        <li><a class="dropdown-item" href="#">Messages</a></li>
+				        <li><a class="dropdown-item" href="#">Log out</a></li>
+				    </ul>
+				</c:if>
 			</div>
 		</div>
 	</nav>

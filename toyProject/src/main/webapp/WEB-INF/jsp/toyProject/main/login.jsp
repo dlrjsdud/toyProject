@@ -23,9 +23,7 @@
 							<h5 class="card-header">로그인</h5>
 							<div class="card-body">
 								<a href="/toyProject/login/naver-login.do"><img src="/toyProject/images/toyProject/btnG.png" style="width: 100px; height: 35px" ></a>
-								<br>
-								
-							    <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=Lytfg0QCqUNQaYbNPusV&state=1234&redirect_uri=http%3A%2F%2Flocalhost%3A8081%2Flogin%2Fnaver%2Fcode"><img src="/toyProject/images/toyProject/btnG.png" style="width: 100px; height: 35px" ></a>
+							
 							</div>
 						</div>
 					</div>
