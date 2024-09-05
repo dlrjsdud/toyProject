@@ -36,6 +36,8 @@ const grid = new tui.Grid({
 	}]
 });
 
+let ajaxGridData;
+
 $.ajax({
     url: '/toyProject/getFree.do',
     type: 'GET',
@@ -45,12 +47,12 @@ $.ajax({
             // 서버 응답에서 data 배열 가져오기
             const data = response.data;
 
-            // 새로운 contents 배열 생성
-            const contents = [];
+            // 새로운 gridData 배열 생성
+            ajaxGridData = [];
 
             // data가 배열이므로 반복문 사용
             data.forEach(item => {
-                contents.push({
+                ajaxGridData.push({
                     post_id: item.post_id,
                     title: item.title,
                     email: item.email,
@@ -60,7 +62,7 @@ $.ajax({
             });
 
             // 그리드에 데이터 설정
-            grid.resetData(contents);
+            grid.resetData(ajaxGridData);
         } else {
             console.error('데이터를 가져오는 데 실패했습니다.');
         }
@@ -81,12 +83,19 @@ grid.on('click', (ev) => {
 });
 
 function search() {
-	const searchInput = document.querySelector('.search').value.toLowerCase();
-	const filteredData = gridData.filter(item => {
-		return item.title.toLowerCase().includes(searchInput) ||
-			item.id.toLowerCase().includes(searchInput) ||
-			item.date.toLowerCase().includes(searchInput);
+	const searchInput = document.querySelector('.search').value;
+	
+	if (!searchInput || searchInput.trim() === '') {
+		grid.resetData(ajaxGridData);
+		return;
+	}
+
+	const filteredData = ajaxGridData.filter(item => {
+		return item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+			item.post_id.toString().toLowerCase().includes(searchInput.toLowerCase()) ||
+			item.created_at.toLowerCase().includes(searchInput.toLowerCase());
 	});
+	
 	grid.resetData(filteredData);
 }
 
