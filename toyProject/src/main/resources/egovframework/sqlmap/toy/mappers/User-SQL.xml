@@ -8,4 +8,10 @@
 		values 
 			(#{email},#{mobile},#{nickname},#{name})
 	</insert>
+	
+	<select id="isUserExists" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+    	FROM user
+    	WHERE email = #{email}
+	</select>
 </mapper>

@@ -17,4 +17,6 @@ public interface ToyLoginService {
 	public NaverProfile getNaverUserInfo(String accessToken);
 	
 	public void setNaverUserInfo(NaverProfile userInfo);
+	
+	public boolean isUserExists(String email);
 }

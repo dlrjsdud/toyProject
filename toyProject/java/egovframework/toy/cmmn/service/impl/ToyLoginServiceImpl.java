@@ -10,6 +10,8 @@ import java.security.SecureRandom;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -33,6 +35,7 @@ public class ToyLoginServiceImpl implements ToyLoginService {
    
    NaverApi naverApi;
    
+   @Autowired
    ToyLoginMapper toyLoginMapper;
    
    public String generateState()
@@ -152,10 +155,24 @@ public class ToyLoginServiceImpl implements ToyLoginService {
    }
    
    @Override
-   public void setNaverUserInfo(NaverProfile userInfo) {
+   public void setNaverUserInfo(NaverProfile userInfo) {	   
+	   try {
+		    int setNaverUserInfoRes = toyLoginMapper.setNaverUserInfo(userInfo);
+		    System.out.println("네이버 유저정보 DB insert한 결과값 " + setNaverUserInfoRes);
+		} catch (Exception e) {
+		    System.out.println("DB insert 중 예외 발생: " + e.getMessage());
+		    e.printStackTrace();
+		}
+   }
+   
+   @Override
+   public boolean isUserExists(String email) {
+	   //System.out.println("서비스impl 들어옴 : "+email);
 	   
-	   int setNaverUserInfoRes = toyLoginMapper.setNaverUserInfo(userInfo);
-	   System.out.println(setNaverUserInfoRes);
+	   int res = toyLoginMapper.isUserExists(email);
+	   
+	   //System.out.println("로그인유저 존재 여부 결괏값 : "+res);
+	   return res>0;
    }
    
 }
