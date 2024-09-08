@@ -31,9 +31,9 @@ public class WriteController {
 		
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("email", "이건영테스트");
-		
 		String email = (String)session.getAttribute("email");
+		
+		System.out.println("이메일 확인 : "+email);
 		
 		WriteVO vo = new WriteVO();
 		vo.setEmail(email);

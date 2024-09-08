@@ -30,7 +30,7 @@
 				<div class="row my-4">
 					<div class="col-12 mb-4">
 						<div class="card">
-							<h5 class="card-header">일간 인기글</h5>
+							<h5 class="card-header" id="headerArea"></h5>
 							<div class="card-body" id="contentArea"></div>
 						</div>
 					</div>

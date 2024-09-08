@@ -20,5 +20,13 @@
 	<update id="incrementViewCount" parameterType="String">
 		UPDATE free SET view_count = view_count + 1 WHERE post_id = #{post_id}
 	</update>
+	
+	<select id="getComment" parameterType="String" resultType="commentVO">
+		SELECT * FROM comments WHERE post_id = #{post_id}
+	</select>
+	
+	<insert id="commentDo" parameterType="String">
+		INSERT INTO comments (post_id, email, content) VALUES (#{post_id},#{email},#{comment});
+	</insert>
 
 </mapper>
