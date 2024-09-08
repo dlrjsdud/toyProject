@@ -36,7 +36,6 @@ public class PostServiceImpl extends EgovAbstractServiceImpl implements PostServ
 	
 	@Override
 	public int commentDo(String post_id, String email, String comment) throws Exception{
-		System.out.println("확인");
 		return mapper.commentDo(post_id, email, comment);
 	}
 	
