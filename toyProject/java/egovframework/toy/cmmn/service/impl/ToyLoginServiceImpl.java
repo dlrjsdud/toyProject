@@ -33,6 +33,8 @@ public class ToyLoginServiceImpl implements ToyLoginService {
    
    NaverApi naverApi;
    
+   ToyLoginMapper toyLoginMapper;
+   
    public String generateState()
    {
        SecureRandom random = new SecureRandom();
@@ -147,6 +149,13 @@ public class ToyLoginServiceImpl implements ToyLoginService {
        NaverProfile naverProfile = new NaverProfile(response.getBody());
 
        return naverProfile;
+   }
+   
+   @Override
+   public void setNaverUserInfo(NaverProfile userInfo) {
+	   
+	   int setNaverUserInfoRes = toyLoginMapper.setNaverUserInfo(userInfo);
+	   System.out.println(setNaverUserInfoRes);
    }
    
 }

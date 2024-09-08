@@ -2,10 +2,15 @@ package egovframework.toy.cmmn.service;
 
 
 import com.google.gson.JsonElement;
+
 import com.google.gson.JsonParser;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class NaverProfile {
 

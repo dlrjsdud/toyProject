@@ -15,4 +15,6 @@ public interface ToyLoginService {
 	public String getNaverTokenUrl(String type,HttpServletRequest request,@RequestParam("code")String code) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException;
 	
 	public NaverProfile getNaverUserInfo(String accessToken);
+	
+	public void setNaverUserInfo(NaverProfile userInfo);
 }

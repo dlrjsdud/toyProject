@@ -16,23 +16,23 @@
 			<div class="dropdown">
 				<%-- <c:out value="${email}" /> --%>
 				<c:choose>
-				    <c:when test="${empty email}">
+				    <c:when test="${empty userInfo}">
 				        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" aria-expanded="false" onclick="window.location.href='/toyProject/login.do';">NaverLogin</button>
 				    </c:when>
 				    <c:otherwise>
 				        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-				        	${email}
+				        	${userInfo.email}
 				        	<!-- map방법 다시 찾기 -->
 				        </button>
 				    </c:otherwise>
 				</c:choose>
 				
 				
-				<c:if test="${not empty email}">
+				<c:if test="${not empty userInfo}">
 				    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				        <li><a class="dropdown-item" href="#">Settings</a></li>
 				        <li><a class="dropdown-item" href="#">Messages</a></li>
-				        <li><a class="dropdown-item" href="#">Log out</a></li>
+				        <li><a class="dropdown-item" href="/toyProject/logout.do">Log out</a></li>
 				    </ul>
 				</c:if>
 			</div>

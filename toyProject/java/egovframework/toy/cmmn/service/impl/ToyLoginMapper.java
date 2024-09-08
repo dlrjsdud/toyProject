@@ -1,5 +1,11 @@
 package egovframework.toy.cmmn.service.impl;
 
-public interface ToyLoginMapper {
+import org.apache.ibatis.annotations.Mapper;
 
+import egovframework.toy.cmmn.service.NaverProfile;
+
+@Mapper
+public interface ToyLoginMapper {
+	
+	public int setNaverUserInfo(NaverProfile userInfo);
 }

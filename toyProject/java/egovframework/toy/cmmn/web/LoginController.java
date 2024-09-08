@@ -8,6 +8,7 @@ import java.security.SecureRandom;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hsqldb.lib.HashMap;
 import org.hsqldb.lib.Map;
@@ -48,7 +49,7 @@ public class LoginController {
 	}
 	
 	 @GetMapping("/login/naver/code.do")
-	   public String callBack(HttpServletRequest request, HttpServletResponse response,@RequestParam("code")String code,Model model) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException{
+	   public String callBack(HttpServletRequest request, HttpServletResponse response,@RequestParam("code")String code,Model model,HttpSession session) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException{
 		 
 		  Map<String, Object> map = new HashMap<>();
 		 
@@ -58,19 +59,30 @@ public class LoginController {
 	      
 	      //accessToken으로 사용자 프로필 정보 가져오기
 	      NaverProfile userInfo = toyLoginService.getNaverUserInfo(accessToken);
+	      //DB에 사용자 프로필 저장하기
+	      
+	      toyLoginService.setNaverUserInfo(userInfo);
 	      
 	      map.put("id", userInfo.getName());
 	      map.put("nickName", userInfo.getNickname());
 	      map.put("email", userInfo.getEmail());
 	      map.put("mobile", userInfo.getMobile());
 	      
-	      model.addAttribute("userInfo", map);
+	      //model.addAttribute("userInfo", map);
 	      model.addAttribute("email", userInfo.getEmail());
+	      
+	      session.setAttribute("userInfo", userInfo);
+	      
 	      return "main/index";
 	      //return "redirect:/index.do";
 	       
 	   }
 
+		@GetMapping("/logout.do")
+		public String logout(HttpSession session) {
+			session.removeAttribute("userInfo");
+			return "redirect:/index.do";
+		}
 	
 	
 	
