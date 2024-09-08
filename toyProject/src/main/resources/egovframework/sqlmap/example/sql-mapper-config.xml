@@ -15,5 +15,6 @@
 		<typeAlias alias="postVO" type="egovframework.toy.post.service.PostVO"/>
 		<typeAlias alias="indexVO" type="egovframework.toy.index.service.IndexVO"/>
 		<typeAlias alias="commentVO" type="egovframework.toy.post.service.CommentVO"/>
+		<typeAlias alias="NaverProfile" type="egovframework.toy.cmmn.service.NaverProfile"/>
     </typeAliases>
 </configuration>

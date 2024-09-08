@@ -61,15 +61,23 @@ public class LoginController {
 	      NaverProfile userInfo = toyLoginService.getNaverUserInfo(accessToken);
 	      //DB에 사용자 프로필 저장하기
 	      
-	      toyLoginService.setNaverUserInfo(userInfo);
-	      
-	      map.put("id", userInfo.getName());
-	      map.put("nickName", userInfo.getNickname());
-	      map.put("email", userInfo.getEmail());
-	      map.put("mobile", userInfo.getMobile());
+	      boolean isUserExists = toyLoginService.isUserExists(userInfo.getEmail());
+
+	      if (!isUserExists) {
+	          toyLoginService.setNaverUserInfo(userInfo);
+	          System.out.println("새로운 사용자 정보 DB에 저장");
+	      } else {
+	          System.out.println("이미 존재하는 사용자, 저장하지 않음");
+	      }
+
+	      System.out.println("DB에 값 저장하고 컨트롤러 돌아옴");
+	      //map.put("id", userInfo.getName());
+	      //map.put("nickName", userInfo.getNickname());
+	      //map.put("email", userInfo.getEmail());
+	      //map.put("mobile", userInfo.getMobile());
 	      
 	      //model.addAttribute("userInfo", map);
-	      model.addAttribute("email", userInfo.getEmail());
+	      //model.addAttribute("email", userInfo.getEmail());
 	      
 	      session.setAttribute("userInfo", userInfo);
 	      
