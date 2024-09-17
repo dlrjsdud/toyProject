@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.toy.notice.service.impl.NoticeMapper">
+
+	 <select id="getNotice" resultType="noticeVO">
+        SELECT post_id, title, email, created_at, view_count FROM notice ORDER BY created_at DESC
+    </select>
+
+</mapper>
