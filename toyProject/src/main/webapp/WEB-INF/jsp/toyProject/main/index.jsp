@@ -15,6 +15,7 @@
 	href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link type="text/css" rel="stylesheet"
 	href="/toyProject/css/bootStrap/bootStrap.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/navbar.jsp" />
@@ -24,7 +25,7 @@
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
 				<!-- 버튼 클릭할때마다 기간에 맞는 인기글 리스트 가져오기(비동기) -->
 				<button class="btn btn-sm btn-secondary ml-3 mt-2"
-					onclick="loadDailyTopPosts()">일간 인기글</button>
+					onclick="loadRankList()">일간 인기글</button>
 				<button class="btn btn-sm btn-warning ml-3 mt-2"
 					onclick="loadNotices()">공지사항</button>
 				<div class="row my-4">

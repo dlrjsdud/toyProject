@@ -26,6 +26,7 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/jsp/toyProject/cmmn/sidebar.jsp" />
 			<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+			<h3 class="mb-4">자유 게시판</h3>
 				<div class="d-flex align-items-center">
 					<input type="text" name="searchInput" class="search"
 						onkeydown="handleKeyDown(event)">

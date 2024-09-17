@@ -6,4 +6,6 @@ public interface IndexService {
 	
 	 List<IndexVO> getRank() throws Exception;
 	
+	 List<IndexVO> getIndexNotice() throws Exception;
+	
 }

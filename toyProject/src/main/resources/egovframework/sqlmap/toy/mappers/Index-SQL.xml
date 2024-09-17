@@ -11,5 +11,12 @@
 		ORDER BY view_count DESC
 		LIMIT 10;
 	</select>
+	
+	<select id="getIndexNotice" resultType="indexVO">
+		SELECT *
+		FROM notice
+		ORDER BY view_count DESC
+		LIMIT 10;
+	</select>
 
 </mapper>

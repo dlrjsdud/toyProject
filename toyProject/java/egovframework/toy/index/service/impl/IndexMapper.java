@@ -11,4 +11,6 @@ public interface IndexMapper {
 
 	List<IndexVO> getRank() throws Exception;
 	
+	List<IndexVO> getIndexNotice() throws Exception;
+	
 }

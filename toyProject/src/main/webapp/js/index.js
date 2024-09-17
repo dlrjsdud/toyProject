@@ -1,22 +1,49 @@
-document.addEventListener('DOMContentLoaded', function() {
-    loadDailyTopPosts();
+$(document).ready(function() {
+	loadRankList();
 });
 
-function loadDailyTopPosts() {
-    document.getElementById('contentArea').innerHTML = `
-        <p class="card-text">1위 - 자유게시판 "똥민지"</p>
-        <p class="card-text">2위 - a게시판 "시른데~?"</p>
-        <p class="card-text">. . .</p>
-        <p class="card-text">10위 - b게시판 "얌푸"</p>
-    `;
-    document.getElementById('headerArea').innerHTML = '일간 인기글';
+function loadRankList() {
+	$.ajax({
+		url: '/toyProject/rank.do', // 요청할 URL
+		type: 'GET', // HTTP 메서드
+		dataType: 'json', // 기대하는 데이터 형식
+		success: function(data) {
+			// headerArea에 내용 추가
+			document.getElementById('headerArea').innerHTML = '일간 인기글';
+
+			// contentArea에 내용 추가
+			let contentHtml = '';
+			data.forEach(function(item, index) {
+				contentHtml += `<p class="card-text">${index + 1}위 - "${item.title}"</p>`;
+			});
+
+			document.getElementById('contentArea').innerHTML = contentHtml;
+		},
+		error: function(xhr, status, error) {
+			console.error('Error:', error); // 오류 처리
+		}
+	});
 }
 
 function loadNotices() {
-    document.getElementById('contentArea').innerHTML = `
-        <p class="card-text">공지사항 1 - 시스템 점검 안내</p>
-        <p class="card-text">공지사항 2 - 이벤트 참여 방법 안내</p>
-        <p class="card-text">공지사항 3 - 새 게시판 오픈!</p>
-    `;
-    document.getElementById('headerArea').innerHTML = '공지사항';
+	$.ajax({
+		url: '/toyProject/indexNotice.do', // 요청할 URL
+		type: 'GET', // HTTP 메서드
+		dataType: 'json', // 기대하는 데이터 형식
+		success: function(data) {
+			// headerArea에 내용 추가
+			document.getElementById('headerArea').innerHTML = '공지사항';
+
+			// contentArea에 내용 추가
+			let contentHtml = '';
+			data.forEach(function(item, index) {
+				contentHtml += `<p class="card-text">${index + 1}위 - "${item.title}"</p>`;
+			});
+
+			document.getElementById('contentArea').innerHTML = contentHtml;
+		},
+		error: function(xhr, status, error) {
+			console.error('Error:', error); // 오류 처리
+		}
+	});
 }

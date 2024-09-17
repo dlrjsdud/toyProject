@@ -45,7 +45,9 @@
 						<h5>댓글</h5>
 					</div>
 					<div class="card-body">
-						<form id="commentForm">
+						<!-- action은 js에서 실행 -->
+						<form id="commentForm" method="post">
+							<input type="hidden" name="post_div" value="${post.post_div}">
 							<input type="hidden" name="post_id" value="${post.post_id}">
 							<div class="form-group mb-3">
 								<label for="comment">댓글을 입력하세요:</label>

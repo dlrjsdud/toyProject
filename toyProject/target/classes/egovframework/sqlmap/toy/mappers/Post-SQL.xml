@@ -13,20 +13,36 @@
 		<result property="content" column="content" />
 	</resultMap>
 
-	<select id="getPost" parameterType="String" resultType="postVO">
+	<select id="getPostFree" parameterType="String" resultType="postVO">
 		SELECT * FROM free WHERE post_id = #{post_id}
 	</select>
+	
+	<select id="getPostNotice" parameterType="String" resultType="postVO">
+		SELECT * FROM notice WHERE post_id = #{post_id}
+	</select>
 
-	<update id="incrementViewCount" parameterType="String">
+	<update id="incrementViewCountFree" parameterType="String">
 		UPDATE free SET view_count = view_count + 1 WHERE post_id = #{post_id}
 	</update>
 	
-	<select id="getComment" parameterType="String" resultType="commentVO">
-		SELECT * FROM comments WHERE post_id = #{post_id}
+	<update id="incrementViewCountNotice" parameterType="String">
+		UPDATE notice SET view_count = view_count + 1 WHERE post_id = #{post_id}
+	</update>
+	
+	<select id="getCommentFree" parameterType="String" resultType="commentVO">
+		SELECT * FROM freeComments WHERE post_id = #{post_id}
 	</select>
 	
-	<insert id="commentDo" parameterType="String">
-		INSERT INTO comments (post_id, email, content) VALUES (#{post_id},#{email},#{comment});
+	<select id="getCommentNotice" parameterType="String" resultType="commentVO">
+		SELECT * FROM noticeComments WHERE post_id = #{post_id}
+	</select>
+	
+	<insert id="commentDoFree" parameterType="commentVO">
+		INSERT INTO freeComments (post_id, email, content) VALUES (#{post_id},#{email},#{content});
+	</insert>
+	
+	<insert id="commentDoNotice" parameterType="commentVO">
+		INSERT INTO noticeComments (post_id, email, content) VALUES (#{post_id},#{email},#{content});
 	</insert>
 
 </mapper>

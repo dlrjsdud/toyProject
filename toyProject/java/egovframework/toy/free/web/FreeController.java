@@ -2,6 +2,9 @@ package egovframework.toy.free.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import egovframework.toy.cmmn.service.NaverProfile;
 import egovframework.toy.cmmn.service.TuiGridResponseVO;
 import egovframework.toy.free.service.FreeService;
 import egovframework.toy.free.service.FreeVO;
@@ -20,8 +24,17 @@ public class FreeController {
 	FreeService service;
 
 	@GetMapping("/free.do")
-	public String freeDo() throws Exception {
+	public String freeDo(HttpServletRequest request) throws Exception {
 		System.out.println("free.do 요청");
+		
+		HttpSession session = request.getSession();
+
+		NaverProfile userInfo = (NaverProfile) session.getAttribute("userInfo");
+
+		if(userInfo == null) {
+			return "main/login";
+		}
+		
 		return "main/free";
 	}
 	

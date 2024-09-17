@@ -17,26 +17,49 @@ public class PostServiceImpl extends EgovAbstractServiceImpl implements PostServ
 	PostMapper mapper;
 	
 	@Override
-	public PostVO getPost(String post_id) throws Exception {
-		PostVO postVo = mapper.getPost(post_id);
+	public PostVO getPostFree(String post_id) throws Exception {
+		PostVO postVo = mapper.getPostFree(post_id);
 		return postVo;
 	}
 	
 	@Override
-	public int incrementViewCount(String post_id) throws Exception{
-		int result = mapper.incrementViewCount(post_id);
+	public PostVO getPostNotice(String post_id) throws Exception {
+		PostVO postVo = mapper.getPostNotice(post_id);
+		return postVo;
+	}
+	
+	@Override
+	public int incrementViewCountFree(String post_id) throws Exception{
+		int result = mapper.incrementViewCountFree(post_id);
 		return result;
 	}
 	
 	@Override
-	public List<CommentVO> getComment(String post_id) throws Exception{
-		List<CommentVO> commentVo = mapper.getComment(post_id);
+	public int incrementViewCountNotice(String post_id) throws Exception{
+		int result = mapper.incrementViewCountNotice(post_id);
+		return result;
+	}
+	
+	@Override
+	public List<CommentVO> getCommentFree(String post_id) throws Exception{
+		List<CommentVO> commentVo = mapper.getCommentFree(post_id);
 		return commentVo;
 	}
 	
 	@Override
-	public int commentDo(String post_id, String email, String comment) throws Exception{
-		return mapper.commentDo(post_id, email, comment);
+	public List<CommentVO> getCommentNotice(String post_id) throws Exception{
+		List<CommentVO> commentVo = mapper.getCommentNotice(post_id);
+		return commentVo;
+	}
+	
+	@Override
+	public int commentDoFree(CommentVO vo) throws Exception{
+		return mapper.commentDoFree(vo);
+	}
+	
+	@Override
+	public int commentDoNotice(CommentVO vo) throws Exception{
+		return mapper.commentDoNotice(vo);
 	}
 	
 }

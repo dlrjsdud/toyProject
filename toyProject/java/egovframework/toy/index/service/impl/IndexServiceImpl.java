@@ -18,5 +18,10 @@ public class IndexServiceImpl implements IndexService {
 	public List<IndexVO> getRank() throws Exception {
 		return mapper.getRank();
 	}
+	
+	@Override
+	public List<IndexVO> getIndexNotice() throws Exception {
+		return mapper.getIndexNotice();
+	}
 
 }
